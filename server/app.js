@@ -8,7 +8,7 @@ require('dotenv').config()
 app.use(cors());
 const conn=require('./Routes/conn');
 conn();
-const PORT=process.env.PORT;
+const PORT=process.env.PORT|| 8090; 
 
 
 
@@ -25,10 +25,10 @@ app.get('*',(req,res)=>
     res.sendFile(path.join(__dirname,'../client/build/index.html'));
 })
 
-app.get('/', (req, res)=>
-{
-    res.send("Hello World");
-});
+// app.get('/', (req, res)=>
+// {
+//     res.send("Hello World");
+// });
 
 
 
