@@ -5,9 +5,10 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node app.js",
-    "client": "cd ../client/build && serve -s .",
-    "start": "concurrently \"npm run server\" \"npm run client\""
+    "start": "node app.js",
+    "server": "nodemon app.js",
+    "client": "npm start --prefix ../client",
+    "dev": "concurrently \"npm start\" \"npm run client\""
   },
   "author": "",
   "license": "ISC",
