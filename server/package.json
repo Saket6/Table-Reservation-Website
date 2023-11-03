@@ -5,9 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "client": "npm start",
-    "start": "node app.js",
-    "dev": "concurrently \"npm start\"\"npm run client\""
+    "server":"node app.js",
+    "client": "cd ../client/build && serve -s .",
+    "start": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "",
   "license": "ISC",
@@ -19,5 +19,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.6.3",
     "nodemon": "^3.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
   }
 }
